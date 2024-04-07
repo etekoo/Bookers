@@ -1,0 +1,16 @@
+<% if flash[:success] %>
+  <div class="success-message">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+<h2>タイトル</h2>
+<p><%= @book.title %></p>
+
+<h2>本文</h2>
+<p><%= @book.body %></p>
+
+<%= link_to "編集", edit_book_path(@book.id) %>
+<%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<%= link_to "戻る", books_path %>
+
